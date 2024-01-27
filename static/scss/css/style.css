@@ -76,6 +76,7 @@
   color: hsl(257, 7%, 63%);
   font-weight: 600;
   font-size: 1.2rem;
+  cursor: pointer;
   transition: all ease 0.3s;
 }
 .navOptionWrapper ul .option:hover {
