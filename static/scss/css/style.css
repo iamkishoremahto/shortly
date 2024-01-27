@@ -56,6 +56,10 @@
 .navCol .login {
   background-color: transparent;
   color: hsl(257, 7%, 63%);
+  transition: all ease 0.3s;
+}
+.navCol .login:hover {
+  color: hsl(260, 8%, 14%);
 }
 
 .navButtons {

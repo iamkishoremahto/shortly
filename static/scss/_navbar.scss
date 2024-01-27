@@ -31,6 +31,12 @@
     .login{
         background-color: transparent;
         color: $Grayish_Violet ;
+        transition: all ease 0.3s;
+
+
+        &:hover{
+            color: $Very_Dark_Violet;
+        }
     }
 
 }
