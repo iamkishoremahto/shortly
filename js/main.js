@@ -8,7 +8,14 @@ function handburgerHandler() {
 
     handburger.addEventListener('click', () => {
         let mobileMenu = document.querySelector('.mobile_menu');
+        
         mobileMenu.classList.toggle('mobile_menu_show');
+        if(mobileMenu.classList.contains('mobile_menu_show')){
+            handburger.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+        }
+        else{
+            handburger.innerHTML = `<i class="fa-solid fa-bars"></i>`
+        }
     })
 }
 
@@ -82,10 +89,16 @@ class myLocalStorage {
 
 async function getSortedUrl(url) {
     
-    let apiEndPoint = `https://ulvis.net/API/write/get?url=${url}`;
+    let apiEndPoint = ` http://tinyurl.com/api-create.php?url=${url}`;
     let response = await fetch(apiEndPoint);
-    let sortUrl = await response.json();
-    return sortUrl;
+    let sortUrl = await response.text();
+    if(response.status == 200){
+       
+        return sortUrl;
+    }
+    else{
+        return "error";
+    }
 }
 
 async function updateShortedUrlsInLocalStorage(url) {
@@ -95,9 +108,12 @@ async function updateShortedUrlsInLocalStorage(url) {
 
     async function updateData(url){
         let sortUrl = await getSortedUrl(url);
-        let newUrlObject = { url: url, sortUrl: sortUrl }
-        ObjectArray.push(newUrlObject)
-        myLocatDataObj.updateMyLocalItems(ObjectArray)
+        if(sortUrl !== 'error'){
+            let newUrlObject = { url: url, sortUrl: sortUrl }
+            ObjectArray.push(newUrlObject)
+            myLocatDataObj.updateMyLocalItems(ObjectArray)
+        }
+        
     }
 
     if (ObjectArray.length === 0) {
@@ -125,7 +141,44 @@ async function shortenBtnHandler() {
     if (isValidUrl) {
         updateShortedUrlsInLocalStorage(linkInput.value);
     }
+    updateShortedUrlSection()
 
+}
+
+function updateShortedUrlSection(){
+    let myLocatDataObj = new myLocalStorage();
+    let allUrls = myLocatDataObj.getMyLocalItems();
+
+    let shortedUrlSection = document.querySelector('.showPreviousUrls ul')
+    shortedUrlSection.innerHTML = `` ;
+
+    allUrls.reverse().forEach((items) => {
+        let shortedUrlSection = document.querySelector('.showPreviousUrls ul')
+      
+        let template = `<p class="mainUrl">${items.url}</p>
+        <div class="sortUrl">
+            <a href="${items.sortUrl}">${items.sortUrl}</a>
+            <button class="copy">Copy</button>
+        </div>`
+        let newUrlElement = document.createElement('li')
+        newUrlElement.classList.add('previousUrl');
+        newUrlElement.innerHTML = template;
+        let copyBtn = newUrlElement.querySelector('.copy')
+
+        copyBtn.addEventListener('click', () =>{
+            let textarea = document.createElement('textarea')
+            textarea.value = items.sortUrl;
+            document.body.appendChild(textarea)
+            textarea.select();
+            document.execCommand('copy');
+            textarea.remove();
+            copyBtn.textContent = 'Copied!'
+            copyBtn.classList.add('copied')
+
+        })
+
+        shortedUrlSection.appendChild(newUrlElement)
+    })
 }
 
 let shortenBtn = document.querySelector('.shortenBtn');
@@ -135,7 +188,7 @@ linkInput.addEventListener('change', errorShowHandler);
 linkInput.addEventListener('keydown', errorShowHandler);
 shortenBtn.addEventListener('click', shortenBtnHandler);
 
-
+updateShortedUrlSection();
 handburgerHandler();
 let myLocatDataObj = new myLocalStorage();
 // async function test(){

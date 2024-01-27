@@ -277,10 +277,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 150px;
+  max-height: 500px;
+  overflow-y: auto;
   padding-left: 0;
   gap: 10px;
   list-style: none;
   padding: 10px;
+  padding-top: 70px;
 }
 .urlInputCol .showPreviousUrls ul li {
   width: 100%;
@@ -313,6 +317,9 @@
   font-weight: 500;
   border: none;
   border-radius: 5px;
+}
+.urlInputCol .showPreviousUrls ul li .sortUrl .copied {
+  background-color: hsl(257, 27%, 26%);
 }
 
 .urlStatisticsRow {
@@ -398,8 +405,12 @@
     height: 40px;
     margin-top: 10px;
   }
+  .urlInputCol .showPreviousUrls ul {
+    padding-top: 0;
+  }
   .urlInputCol .showPreviousUrls ul li {
     flex-direction: column;
+    min-height: 150px;
   }
   .urlInputCol .showPreviousUrls ul li .sortUrl {
     padding-top: 20px;
