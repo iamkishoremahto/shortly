@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+$Cyan: hsl(180, 66%, 49%);
+$Dark_Violet: hsl(257, 27%, 26%);
+$Red: hsl(0, 87%, 67%);
+$Gray: hsl(0, 0%, 75%);
+$Grayish_Violet: hsl(257, 7%, 63%);
+$Very_Dark_Blue: hsl(255, 11%, 22%);
+$Very_Dark_Violet: hsl(260, 8%, 14%);
+$White:#ffffff;
+$LightGray: #f0f1f6;
+
+.myBtn{
+    padding: 10px 30px;
+    background-color:  $Cyan;
+    color: $White;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    
+}
+.bodyWrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: $White;
+    padding: 0;
+}
+// https://tinyurl.com/api-create.php?url=www.vmokshagroup.com
+@import 'navbar';
+@import 'dashbord';
+
+.UrlInputContainer{
+    background-color: $LightGray;
+    padding: 0;
+    margin: 0;
+}
+.urlInputWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+    width: 100%;
+    background-color: $LightGray;
+
+    .UrlInputRow{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    
+    }
+}
+
+
+.urlInputCol{
+    
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+
+        position: relative;
+        .inputLink{
+            position: relative;
+             top: -80px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0px;
+            gap: 20px;
+            align-items: center;
+            padding: 30px;
+            background:url('/images/bg-shorten-desktop.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: $Dark_Violet;
+            border-radius: 15px;
+
+            .inputWrapper{
+                width: 85%;
+               
+                position: relative;
+               
+                input{
+                    height: 60px;
+
+                    &:focus{
+                        box-shadow: none;
+                    }
+                }
+                .inputError{
+                    box-shadow: 0px 00px 8px $Red;
+                }
+                .inputCorrect{
+                    box-shadow: 0px 00px 8px green;
+                }
+                .showError{
+                    display: none;
+                    position: absolute;
+                    bottom:-25px;
+                    color: $Red;
+                }
+                .showErrorOccured{
+                    display: block;
+                }
+            }
+            .shortenBtn{
+                padding: 10px 15px;
+                border-radius: 5px;
+                width: 150px;
+                height: 60px;
+            }
+        }
+
+        .showPreviousUrls{
+            display: flex;
+        
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            top: -70px;
+            ul{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding-left: 0;
+                gap: 10px;
+                list-style: none;
+                padding: 10px;
+               
+                li{
+                    width: 100%;
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    min-height: 70px;
+                    background-color: $White;
+                    border-radius: 5px;;
+                    .mainUrl{
+                        margin-bottom: 0;
+                        font-weight: 600;
+                    }
+                    .sortUrl{
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        
+                        a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .copy{
+                            padding: 5px 25px;
+                            background-color: $Cyan;
+                            color: $White;
+                            font-weight: 500;
+                            border: none;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+
+            }
+        }
+}
+
+
+.urlStatisticsRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    .statisticsHeading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        h1{
+            font-weight: 800;
+        }
+        p{
+            color: $Grayish_Violet;
+            font-weight: 600;
+        }
+    }
+
+    .staticsCard{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 150px;
+        padding-top: 60px;
+        gap: 30px;
+        .cardWrapper{
+            
+            position: relative;
+            background-color: $White;
+            min-width: 260px;
+            min-height: 250px;
+            padding: 25px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            img{
+                position: absolute;
+                left: 20px;
+                top: -40px;
+                background-color: $Dark_Violet;
+                padding: 20px 20px;
+                border-radius: 50%;
+            }
+
+            &:nth-child(2){
+                top: 40px;
+            }
+            &:nth-child(3){
+                top: 80px;
+            }
+
+            &::before{
+                content: "";
+                width: 30px;
+                height: 10px;
+                background-color: $Cyan;
+                position: absolute;
+                top:50%;
+                left: -30px;
+            }
+
+            &:nth-child(1){
+                &::before{
+                    display: none;
+                }
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 995px){
+    .urlInputCol{
+    
+        .inputLink{
+            flex-direction: column;
+         
+            
+            padding: 10px 10px;
+            .inputWrapper{
+                width: 100%;
+            }
+            .shortenBtn{
+                font-size: 0.9rem;
+                height: 40px;
+                margin-top: 10px;
+            }
+        }
+
+        .showPreviousUrls{
+           ul {
+                li{
+                    flex-direction: column;
+
+                    .sortUrl{
+                        padding-top: 20px;
+                        flex-direction: column;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .urlStatisticsRow{
+        padding-bottom: 150px;
+     
+        .staticsCard{
+            padding-top: 50px;
+            flex-direction: column;
+
+            .cardWrapper{
+                &::before{
+                    display: none
+                }
+            }
+        }
+    }
+}

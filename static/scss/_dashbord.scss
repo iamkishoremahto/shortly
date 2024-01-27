@@ -1,0 +1,50 @@
+.DashbordWrapper{
+    min-height: 600px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .DashbordRow{
+        height: 100%;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .DashbordCol{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        h1{
+            font-size: 3rem;
+            font-weight: 800;
+        }
+    }
+    }
+}
+
+@media screen and (max-width: 995px){
+    .DashbordWrapper{
+        .DashbordRow{
+            flex-direction: column-reverse;
+            gap: 30px;
+            padding-bottom:30px;
+            width: 100%;
+
+            .DashbordCol{
+                width: 100%;
+                align-items: center;
+                h1{
+                    text-align: center;
+                    min-width: 100%;
+                }
+                p{
+                    text-align: center;
+                    min-width: 100%;
+                }
+            }
+        }
+    }
+}

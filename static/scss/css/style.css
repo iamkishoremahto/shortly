@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.myBtn {
+  padding: 10px 30px;
+  background-color: hsl(180, 66%, 49%);
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.bodyWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+  padding: 0;
+}
+
+.navbarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 400px;
+  min-height: 120px;
+  height: 120px;
+  padding: 0;
+  position: relative;
+}
+
+.navRow {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+
+.navCol {
+  display: flex;
+  align-items: center;
+}
+.navCol .login {
+  background-color: transparent;
+  color: hsl(257, 7%, 63%);
+}
+
+.navButtons {
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.navOptionWrapper ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.navOptionWrapper ul .option {
+  color: hsl(257, 7%, 63%);
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all ease 0.3s;
+}
+.navOptionWrapper ul .option:hover {
+  color: hsl(260, 8%, 14%);
+}
+
+.handburger {
+  display: none;
+}
+.handburger i {
+  color: hsl(0, 0%, 75%) !important;
+  font-size: 3rem;
+}
+
+.mobile_menu {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 5%;
+  transition: all ease-out 0.3s;
+  background-color: hsl(257, 27%, 26%);
+  height: 400px;
+  width: 90%;
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mobile_menu .mobile_options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 40px;
+}
+.mobile_menu .mobile_options li {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.mobile_menu .button_options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.mobile_menu_show {
+  display: flex;
+}
+
+@media screen and (max-width: 995px) {
+  .navCol:first-child {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navCol:first-child .navOptionWrapper {
+    display: none;
+  }
+  .navButtons {
+    display: none;
+  }
+  .handburger {
+    display: block;
+  }
+}
+.DashbordWrapper {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DashbordWrapper .DashbordRow {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DashbordWrapper .DashbordRow .DashbordCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.DashbordWrapper .DashbordRow .DashbordCol h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 995px) {
+  .DashbordWrapper .DashbordRow {
+    flex-direction: column-reverse;
+    gap: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+  }
+  .DashbordWrapper .DashbordRow .DashbordCol {
+    width: 100%;
+    align-items: center;
+  }
+  .DashbordWrapper .DashbordRow .DashbordCol h1 {
+    text-align: center;
+    min-width: 100%;
+  }
+  .DashbordWrapper .DashbordRow .DashbordCol p {
+    text-align: center;
+    min-width: 100%;
+  }
+}
+.UrlInputContainer {
+  background-color: #f0f1f6;
+  padding: 0;
+  margin: 0;
+}
+
+.urlInputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 800px;
+  width: 100%;
+  background-color: #f0f1f6;
+}
+.urlInputWrapper .UrlInputRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.urlInputCol {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+}
+.urlInputCol .inputLink {
+  position: relative;
+  top: -80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  gap: 20px;
+  align-items: center;
+  padding: 30px;
+  background: url("/images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: hsl(257, 27%, 26%);
+  border-radius: 15px;
+}
+.urlInputCol .inputLink .inputWrapper {
+  width: 85%;
+  position: relative;
+}
+.urlInputCol .inputLink .inputWrapper input {
+  height: 60px;
+}
+.urlInputCol .inputLink .inputWrapper input:focus {
+  box-shadow: none;
+}
+.urlInputCol .inputLink .inputWrapper .inputError {
+  box-shadow: 0px 0px 8px hsl(0, 87%, 67%);
+}
+.urlInputCol .inputLink .inputWrapper .inputCorrect {
+  box-shadow: 0px 0px 8px green;
+}
+.urlInputCol .inputLink .inputWrapper .showError {
+  display: none;
+  position: absolute;
+  bottom: -25px;
+  color: hsl(0, 87%, 67%);
+}
+.urlInputCol .inputLink .inputWrapper .showErrorOccured {
+  display: block;
+}
+.urlInputCol .inputLink .shortenBtn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 150px;
+  height: 60px;
+}
+.urlInputCol .showPreviousUrls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  top: -70px;
+}
+.urlInputCol .showPreviousUrls ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-left: 0;
+  gap: 10px;
+  list-style: none;
+  padding: 10px;
+}
+.urlInputCol .showPreviousUrls ul li {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.urlInputCol .showPreviousUrls ul li .mainUrl {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+.urlInputCol .showPreviousUrls ul li .sortUrl {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.urlInputCol .showPreviousUrls ul li .sortUrl a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.urlInputCol .showPreviousUrls ul li .sortUrl .copy {
+  padding: 5px 25px;
+  background-color: hsl(180, 66%, 49%);
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+}
+
+.urlStatisticsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.urlStatisticsRow .statisticsHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.urlStatisticsRow .statisticsHeading h1 {
+  font-weight: 800;
+}
+.urlStatisticsRow .statisticsHeading p {
+  color: hsl(257, 7%, 63%);
+  font-weight: 600;
+}
+.urlStatisticsRow .staticsCard {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 150px;
+  padding-top: 60px;
+  gap: 30px;
+}
+.urlStatisticsRow .staticsCard .cardWrapper {
+  position: relative;
+  background-color: #ffffff;
+  min-width: 260px;
+  min-height: 250px;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.urlStatisticsRow .staticsCard .cardWrapper img {
+  position: absolute;
+  left: 20px;
+  top: -40px;
+  background-color: hsl(257, 27%, 26%);
+  padding: 20px 20px;
+  border-radius: 50%;
+}
+.urlStatisticsRow .staticsCard .cardWrapper:nth-child(2) {
+  top: 40px;
+}
+.urlStatisticsRow .staticsCard .cardWrapper:nth-child(3) {
+  top: 80px;
+}
+.urlStatisticsRow .staticsCard .cardWrapper::before {
+  content: "";
+  width: 30px;
+  height: 10px;
+  background-color: hsl(180, 66%, 49%);
+  position: absolute;
+  top: 50%;
+  left: -30px;
+}
+.urlStatisticsRow .staticsCard .cardWrapper:nth-child(1)::before {
+  display: none;
+}
+
+@media screen and (max-width: 995px) {
+  .urlInputCol .inputLink {
+    flex-direction: column;
+    padding: 10px 10px;
+  }
+  .urlInputCol .inputLink .inputWrapper {
+    width: 100%;
+  }
+  .urlInputCol .inputLink .shortenBtn {
+    font-size: 0.9rem;
+    height: 40px;
+    margin-top: 10px;
+  }
+  .urlInputCol .showPreviousUrls ul li {
+    flex-direction: column;
+  }
+  .urlInputCol .showPreviousUrls ul li .sortUrl {
+    padding-top: 20px;
+    flex-direction: column;
+  }
+  .urlStatisticsRow {
+    padding-bottom: 150px;
+  }
+  .urlStatisticsRow .staticsCard {
+    padding-top: 50px;
+    flex-direction: column;
+  }
+  .urlStatisticsRow .staticsCard .cardWrapper::before {
+    display: none;
+  }
+}

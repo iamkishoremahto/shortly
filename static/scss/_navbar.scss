@@ -1,0 +1,136 @@
+
+.navbarWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 400px;
+    min-height: 120px;
+    height:120px;
+
+    padding: 0;
+    position: relative;
+}
+
+.navRow{
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+
+}
+
+.navCol{
+    display: flex;
+    align-items: center;
+
+   
+    .login{
+        background-color: transparent;
+        color: $Grayish_Violet ;
+    }
+
+}
+.navButtons{
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+  
+}
+.navOptionWrapper{
+            
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+
+        .option{
+            color: $Grayish_Violet;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all ease 0.3s;
+
+            &:hover{
+                color: $Very_Dark_Violet;
+            }
+        }
+    }
+}
+
+.handburger{
+    display: none;
+    i{
+        color: $Gray !important;
+    font-size: 3rem;
+    }
+}
+
+.mobile_menu{
+    display: none;
+    position: absolute;
+    top: 120px;
+    left: 5%;
+    transition: all ease-out 0.3s;
+    // transform: translateX(-50%);
+    background-color: $Dark_Violet;
+    height: 400px;
+    width: 90%;
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .mobile_options{
+        width: 100%;
+        display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            list-style: none;
+            padding-left: 0;
+            border-bottom: 1px solid $White;
+            padding-bottom: 40px;
+            li{
+                color: $White;
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+        
+    }
+
+    .button_options{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+    }
+}
+
+.mobile_menu_show{
+    display: flex;
+}
+@media screen and (max-width: 995px){
+    .navCol{
+        &:first-child{
+       
+            justify-content: space-between;
+            align-items: center;
+            .navOptionWrapper{
+                display: none;
+            }
+        }
+       
+    }
+    .navButtons{
+        display: none;
+       }
+    .handburger{
+        display: block;
+    }
+}
