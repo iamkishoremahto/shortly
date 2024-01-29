@@ -103,8 +103,8 @@ async function getSortedUrl(url) {
 
 async function updateShortedUrlsInLocalStorage(url) {
 
-    let myLocatDataObj = new myLocalStorage();
-    let ObjectArray = myLocatDataObj.getMyLocalItems();
+    let myLocatDataObj =  new myLocalStorage();
+    let ObjectArray = await myLocatDataObj.getMyLocalItems();
 
     async function updateData(url){
         let sortUrl = await getSortedUrl(url);
@@ -139,9 +139,10 @@ async function shortenBtnHandler() {
     let linkInput = document.querySelector('#linkInput');
     let isValidUrl = await isValidWebsite(linkInput.value);
     if (isValidUrl) {
-        updateShortedUrlsInLocalStorage(linkInput.value);
+        await updateShortedUrlsInLocalStorage(linkInput.value);
+        updateShortedUrlSection();
     }
-    updateShortedUrlSection()
+    
 
 }
 

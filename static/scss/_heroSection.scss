@@ -94,11 +94,14 @@
             width: 100%;
             position: relative;
             top: -70px;
+       
+        
+          
             ul{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 width: 100%;
                 min-height: 150px;
                 max-height: 500px;
@@ -109,7 +112,8 @@
                 gap: 10px;
                 list-style: none;
                 padding: 10px;
-                padding-top: 70px;
+       
+                
                
                 li{
                     width: 100%;
@@ -262,7 +266,7 @@
 
         .showPreviousUrls{
            ul {
-            padding-top: 0;
+            padding-top: 0px;
                 li{
                     flex-direction: column;
                     min-height: 150px;
@@ -286,7 +290,21 @@
 
             .cardWrapper{
                 &::before{
-                    display: none
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 10px;
+                    height: 100px;
+                }
+                &:nth-child(1){
+                    &::before{
+                        display: block;
+                    }
+                }
+                &:nth-child(3){
+                    &::before{
+                        display: none;
+                    }
                 }
             }
         }
